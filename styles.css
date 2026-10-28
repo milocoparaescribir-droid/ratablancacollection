@@ -1,0 +1,193 @@
+:root {
+  --papel: #e8e6df;
+  --tinta: #151515;
+  --rojo: #c8202a;
+  --gris: #5b5b57;
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font: 17px/1.6 Georgia, "Times New Roman", serif;
+}
+
+.cabecera {
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 3rem 1.25rem 2rem;
+  border-bottom: 8px solid var(--rojo);
+}
+
+.cabecera h1 {
+  margin: 0;
+  max-width: 1000px;
+  margin-inline: auto;
+  font: 900 clamp(3rem, 12vw, 7.5rem)/0.9 Impact, "Arial Narrow Bold", sans-serif;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.cabecera p {
+  max-width: 1000px;
+  margin: 1rem auto 0;
+  color: #cfcdc5;
+}
+
+.menu {
+  background: var(--rojo);
+  padding: 0.5rem 1.25rem;
+}
+
+.menu ul {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+}
+
+.menu a {
+  color: #fff;
+  font: 700 0.95rem Arial, sans-serif;
+  text-decoration: none;
+}
+
+.menu a:hover, .menu a:focus-visible { 
+    text-decoration: underline; 
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.disco {
+  padding: 2.5rem 0;
+  border-bottom: 3px solid var(--tinta);
+}
+
+.disco h2 {
+  margin: 0;
+  font: 900 clamp(2rem, 6vw, 3.4rem)/1 Impact, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+}
+
+.datos {
+  margin: 0.4rem 0 1rem;
+  color: var(--gris);
+  font: 700 0.9rem Arial, sans-serif;
+}
+
+.disco p { 
+    max-width: 70ch; 
+}
+
+.temas {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.5rem;
+  counter-reset: pista;
+}
+
+.temas li { 
+    counter-increment: pista; 
+}
+
+.temas > li > button {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: transparent;
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+  font: 700 0.95rem Arial, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.temas > li > button::before {
+  content: counter(pista) ". ";
+  color: var(--rojo);
+}
+
+.temas > li > button:hover,
+.temas > li > button:focus-visible {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+dialog {
+  width: min(90vw, 480px);
+  padding: 1.5rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 3px solid var(--tinta);
+  border-top: 12px solid var(--rojo);
+}
+
+dialog::backdrop { 
+    background: rgba(0, 0, 0, 0.75); 
+}
+
+dialog h4 {
+  margin: 0 0 0.6rem;
+  font: 900 1.6rem/1.1 Impact, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+}
+
+dialog p { 
+    margin: 0 0 1rem; 
+}
+
+.reproductor {
+  padding: 0.6rem;
+  background: var(--tinta);
+}
+
+.reproductor audio { 
+    width: 100%; display: block; 
+}
+
+dialog form { 
+    margin: 1rem 0 0; text-align: right; 
+}
+
+dialog form button {
+  padding: 0.4rem 1rem;
+  background: var(--rojo);
+  color: #fff;
+  border: 0;
+  font: 700 0.9rem Arial, sans-serif;
+  cursor: pointer;
+}
+
+.otros h3 { 
+    margin-bottom: 0; 
+}
+
+.pie {
+  padding: 1.5rem 1.25rem;
+  background: var(--tinta);
+  color: #cfcdc5;
+  font-size: 0.85rem;
+}
+
+.pie p { 
+    max-width: 1000px; margin: 0 auto 0.5rem; 
+}
+
+@media (max-width: 520px) {
+  body { 
+    font-size: 16px; 
+}
+}
